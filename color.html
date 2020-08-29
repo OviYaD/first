@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+
+            background-color: black;
+        }
+        div {
+            width: 50%;
+            padding: 40px;
+            margin: 100px auto;
+
+        }
+    </style>
+    <title>
+        COLOR
+    </title>
+</head>
+
+<body>
+    <center>
+
+        <h1 style="color:white">Buttons</h1>
+
+        <h2 style="color:white">Click the button to go to the change the background color.</h2>
+
+        <span>
+            <hr width="50%">
+            <br>
+            <br>
+            <br><br><br>
+            <button style="background-color:green" onclick="document.body.style.backgroundColor='green'">GREEN</button>
+            <button style="background-color:blue;" onclick="document.body.style.backgroundColor='blue'">BLUE</button>
+            <button style="background-color:red" onclick="document.body.style.backgroundColor='red'">RED</button>
+        </span>
+        <div>
+            <fieldset>
+
+                <legend style="color: aliceblue; size:inherit;"><b>COUNTER:</b></legend>
+                <h1>
+                    <bold style="color: white;">
+                        Increment are Decrement
+                    </bold>
+                </h1>
+                <button class="button button1" onclick="myfuncd()">-</button>
+                <input type="number" id="myNumber">
+                <button class="button button2" onclick="myfunci()">+</button>
+            </fieldset>
+        </div>
+        <script>
+            function myfuncd() {
+                document.getElementById("myNumber").stepDown(1);
+            }
+        </script>
+        <script>
+            function myfunci() {
+                document.getElementById("myNumber").stepUp(1);
+            }
+        </script>
+
+    </center>
+</body>
+
+</html>

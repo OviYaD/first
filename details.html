@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            color: beige;
+            background-image: url(bg.jpg);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            background-size: 50x50 px;
+            background-attachment: scroll;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-style: unset;
+            font-size: large;
+        }
+
+
+        div {
+            width: 50%;
+            padding: 40px;
+            margin: 100px auto;
+
+        }
+
+        table {
+            border-collapse: collapse;
+            border-style: double;
+            color: rgb(21, 21, 63);
+            border: goldenrod;
+            border-spacing: 5px;
+            background-color: transparent;
+        }
+
+        th {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            padding: 5px;
+            text-align: center;
+            color: rgb(72, 72, 109);
+        }
+
+        td {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font :bold;
+            font-size: medium;
+            padding: 5px;
+            text-align: center;
+            color: rgb(8, 15, 17);
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <script>
+
+        var list1 = [];
+        var list2 = [];
+        var list3 = [];
+        var list4 = [];
+        var list5 = [];
+        var list6 = [];
+        var list7 = [];
+        var list8 = [];
+
+        var n = 1;
+        var x = 0;
+
+        function AddRow() {
+
+            var AddRown = document.getElementById('show');
+            var NewRow = AddRown.insertRow(n);
+
+            list1[x] = document.getElementById("first-name").value;
+            list2[x] = document.getElementById("last-name").value;
+            list3[x] = document.getElementById("gender-choice").value;
+            list4[x] = document.getElementById("email").value;
+            list5[x] = document.getElementById("password").value;
+            list6[x] = document.getElementById("birthday").value;
+            list7[x] = document.getElementById("age").value;
+            list8[x] = document.createElement("button");
+            list8[x].innerHTML = "DELETE";
+
+            var cel1 = NewRow.insertCell(0);
+            var cel2 = NewRow.insertCell(1);
+            var cel3 = NewRow.insertCell(2);
+            var cel4 = NewRow.insertCell(3);
+            var cel5 = NewRow.insertCell(4);
+            var cel6 = NewRow.insertCell(5);
+            var cel7 = NewRow.insertCell(6);
+            var cel8 = NewRow.insertCell(7);
+
+            cel1.innerHTML = list1[x];
+            cel2.innerHTML = list2[x];
+            cel3.innerHTML = list3[x];
+            cel4.innerHTML = list4[x];
+            cel5.innerHTML = list5[x];
+            cel6.innerHTML = list6[x];
+            cel7.innerHTML = list7[x];
+            cel8.appendChild(list8[x]);
+            list8[x].onclick = function () {
+                var i = this.parentNode.parentNode.rowIndex;
+                document.getElementById("show").deleteRow(i);
+            }
+
+            n++;
+            x++;
+        } s
+
+
+    </script>
+
+    <div>
+        
+
+        <table border="6" id="show">
+            <caption>STUDENT DETAILS</caption>
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Gender</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                    <th>Birthday</th>
+                    <th>Age</th>
+                    <th>Edit</th>
+
+                </tr>
+            </thead>
+        </table>
+        <br>
+        <br>
+        <hr width="50%">
+        <fieldset>
+            <legend><b>Details:</b></legend>
+
+            <form>
+                <b>
+                    <blockquote>
+                        <span>
+                            <label for="first-name:">First Name:</label>
+                            <input type="text" id="first-name" name="first-name" placeholder="first name" required>
+                            <label for="last-name">Last Name:</label>
+                            <input type="text" id="last-name" name="last-name" placeholder="last name" required>
+                        </span>
+                        <br>
+                        <br>
+                        <label for="gender-male">Male</label>
+                        <input type="radio" id="gender-choice" name="gender-choice" value="Male">
+
+                        <label for="gender-female">Female</label>
+                        <input type="radio" id="gender-choice" name="gender-choice" value="Female">
+
+                        <label for="gender-other">Other</label>
+                        <input type="radio" id="gender-choice" name="gender-choice" value="Others">
+
+                        <br>
+                        <br>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" placeholder="xyz@email.com">
+                        <br>
+                        <br>
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password">
+                        <br>
+                        <br>
+                        <label for="birthday">Birthday:</label>
+                        <input type="date" id="birthday" name="birthday">
+                        <br><br>
+                        <label for="age">Age:</label>
+                        <input type="number" id="age" name="age" min="1">
+                        <br>
+                        <br>
+                        <label for="agree">I agree all this above informations</label>
+                        <input type="checkbox" id="agree" name="agree">
+                        <br>
+                        <br>
+                        <center>
+                            <input type="button" name="button" value="Add" onclick="AddRow()">
+                            <input type="reset" name="reset">
+                        </center>
+
+                    </blockquote>
+                </b>
+            </form>
+        </fieldset>
+    </div>
+
+</body>
+
+</html>
